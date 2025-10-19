@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>43 ADIM - Integration Test</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/proje.css">
+    <link rel="stylesheet" href="assets/css/timeline.css">
+    
+    <style>
+        .test-section {
+            margin: 2rem 0;
+            padding: 2rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            background: white;
+        }
+        
+        .test-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2563eb;
+            margin-bottom: 1rem;
+        }
+        
+        .test-result {
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 0.5rem 0;
+            font-weight: 500;
+        }
+        
+        .test-pass {
+            background: #dcfce7;
+            color: #166534;
+            border: 1px solid #bbf7d0;
+        }
+        
+        .test-fail {
+            background: #fef2f2;
+            color: #dc2626;
+            border: 1px solid #fecaca;
+        }
+        
+        .test-warning {
+            background: #fefce8;
+            color: #ca8a04;
+            border: 1px solid #fef3c7;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-4xl font-bold text-center text-gray-900 mb-8">
+            43 ADIM - Component Integration Test
+        </h1>
+        
+        <!-- CSS Integration Test -->
+        <div class="test-section">
+            <h2 class="test-title">🎨 CSS Integration Test</h2>
+            <div id="css-test-results"></div>
+            
+            <!-- Test Elements -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+                <div class="project-card">
+                    <div class="project-card-title">Test Project Card</div>
+                    <div class="project-card-description">Testing responsive design and hover effects</div>
+                </div>
+                
+                <button class="btn btn-primary">Primary Button</button>
+                <button class="btn btn-secondary">Secondary Button</button>
+            </div>
+        </div>
+        
+        <!-- JavaScript Integration Test -->
+        <div class="test-section">
+            <h2 class="test-title">⚡ JavaScript Integration Test</h2>
+            <div id="js-test-results"></div>
+            
+            <!-- Counter Test -->
+            <div class="text-center mt-4">
+                <div class="text-4xl font-bold counter" data-target="100">0</div>
+                <p class="text-gray-600">Animated Counter Test</p>
+            </div>
+        </div>
+        
+        <!-- Analytics Integration Test -->
+        <div class="test-section">
+            <h2 class="test-title">📊 Analytics Integration Test</h2>
+            <div id="analytics-test-results"></div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                <button onclick="testAnalyticsTracking()" class="btn btn-primary">
+                    Test Analytics Tracking
+                </button>
+                <button onclick="exportAnalyticsData()" class="btn btn-secondary">
+                    Export Analytics Data
+                </button>
+            </div>
+        </div>
+        
+        <!-- Timeline Integration Test -->
+        <div class="test-section">
+            <h2 class="test-title">📅 Timeline Integration Test</h2>
+            <div id="timeline-test-results"></div>
+            
+            <!-- Timeline Container -->
+            <div id="test-timeline" class="mt-4"></div>
+        </div>
+        
+        <!-- Responsive Design Test -->
+        <div class="test-section">
+            <h2 class="test-title">📱 Responsive Design Test</h2>
+            <div id="responsive-test-results"></div>
+            
+            <div class="responsive-test-grid">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div class="card">Mobile First</div>
+                    <div class="card">Tablet</div>
+                    <div class="card">Desktop</div>
+                    <div class="card">Large Screen</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Touch Interaction Test -->
+        <div class="test-section">
+            <h2 class="test-title">👆 Touch Interaction Test</h2>
+            <div id="touch-test-results"></div>
+            
+            <div class="grid grid-cols-2 gap-4 mt-4">
+                <button class="btn btn-primary hover-lift" id="touch-test-btn">
+                    Touch Test Button
+                </button>
+                <div class="project-card hover-scale" id="touch-test-card">
+                    <div class="project-card-title">Touch Test Card</div>
+                    <div class="project-card-description">Test touch interactions</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- JSON Data Validation Test -->
+        <div class="test-section">
+            <h2 class="test-title">📋 JSON Data Validation Test</h2>
+            <div id="json-test-results"></div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+                <button onclick="testJSONValidation()" class="btn btn-primary">
+                    Test JSON Validation
+                </button>
+                <button onclick="testSpecialFeatures()" class="btn btn-secondary">
+                    Test Special Features
+                </button>
+                <button onclick="testErrorHandling()" class="btn btn-outline">
+                    Test Error Handling
+                </button>
+            </div>
+        </div>
+        
+        <!-- Performance Test -->
+        <div class="test-section">
+            <h2 class="test-title">⚡ Performance Test</h2>
+            <div id="performance-test-results"></div>
+            
+            <div class="mt-4">
+                <button onclick="runPerformanceTest()" class="btn btn-primary">
+                    Run Performance Test
+                </button>
+            </div>
+        </div>
+        
+        <!-- Cross-Device Compatibility Test -->
+        <div class="test-section">
+            <h2 class="test-title">🔄 Cross-Device Compatibility Test</h2>
+            <div id="device-test-results"></div>
+        </div>
+    </div>
+
+    <!-- Load JavaScript Files -->
+    <script src="assets/js/error-handler.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/timeline.js"></script>
+    <script src="assets/js/json-validator.js"></script>
+    <script src="assets/js/special-features-validator.js"></script>
+    <script src="assets/js/compatibility-validator.js"></script>
+    
+    <!-- Integration Test Script -->
+    <script>
+        class IntegrationTester {
+            constructor() {
+                this.tests = [];
+                this.init();
+            }
+            
+            init() {
+                this.runAllTests();
+            }
+            
+            addTest(name, testFunction, category) {
+                this.tests.push({ name, testFunction, category });
+            }
+            
+            async runAllTests() {
+                console.log('🧪 Starting Integration Tests...');
+                
+                // CSS Tests
+                this.testCSS();
+                
+                // JavaScript Tests
+                this.testJavaScript();
+                
+                // Analytics Tests
+                this.testAnalytics();
+                
+                // Timeline Tests
+                await this.testTimeline();
+                
+                // Responsive Tests
+                this.testResponsive();
+                
+                // Touch Tests
+                this.testTouch();
+                
+                // Device Tests
+                this.testDeviceCompatibility();
+                
+                console.log('✅ Integration Tests Complete');
+            }
+            
+            testCSS() {
+                const results = document.getElementById('css-test-results');
+                const tests = [];
+                
+                // Test CSS Variables
+                const rootStyles = getComputedStyle(document.documentElement);
+                const primaryColor = rootStyles.getPropertyValue('--color-primary').trim();
+                tests.push({
+                    name: 'CSS Variables Loaded',
+                    pass: primaryColor !== '',
+                    message: primaryColor ? `Primary color: ${primaryColor}` : 'CSS variables not loaded'
+                });
+                
+                // Test Tailwind CSS
+                const testElement = document.createElement('div');
+                testElement.className = 'bg-blue-500';
+                document.body.appendChild(testElement);
+                const bgColor = getComputedStyle(testElement).backgroundColor;
+                document.body.removeChild(testElement);
+                
+                tests.push({
+                    name: 'Tailwind CSS Integration',
+                    pass: bgColor === 'rgb(59, 130, 246)',
+                    message: bgColor === 'rgb(59, 130, 246)' ? 'Tailwind classes working' : 'Tailwind CSS not loaded properly'
+                });
+                
+                // Test Custom Components
+                const projectCard = document.querySelector('.project-card');
+                const cardStyles = projectCard ? getComputedStyle(projectCard) : null;
+                tests.push({
+                    name: 'Custom Component Styles',
+                    pass: cardStyles && cardStyles.borderRadius !== '0px',
+                    message: cardStyles ? 'Project card styles applied' : 'Custom component styles missing'
+                });
+                
+                this.displayResults(results, tests);
+            }
+            
+            testJavaScript() {
+                const results = document.getElementById('js-test-results');
+                const tests = [];
+                
+                // Test Main.js Loading
+                tests.push({
+                    name: 'Main.js Loaded',
+                    pass: typeof window.analytics !== 'undefined',
+                    message: typeof window.analytics !== 'undefined' ? 'Analytics object available' : 'Main.js not loaded properly'
+                });
+                
+                // Test Counter Animation
+                const counter = document.querySelector('.counter');
+                if (counter) {
+                    // Trigger counter animation
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                // Counter should animate
+                                setTimeout(() => {
+                                    const currentValue = parseInt(counter.textContent);
+                                    tests.push({
+                                        name: 'Counter Animation',
+                                        pass: currentValue > 0,
+                                        message: currentValue > 0 ? `Counter animated to ${currentValue}` : 'Counter animation failed'
+                                    });
+                                    this.displayResults(results, tests);
+                                }, 1000);
+                            }
+                        });
+                    });
+                    observer.observe(counter);
+                }
+                
+                // Test Event Listeners
+                let eventListenerTest = false;
+                const testBtn = document.createElement('button');
+                testBtn.addEventListener('click', () => { eventListenerTest = true; });
+                testBtn.click();
+                
+                tests.push({
+                    name: 'Event Listeners',
+                    pass: eventListenerTest,
+                    message: eventListenerTest ? 'Event listeners working' : 'Event listeners not working'
+                });
+                
+                this.displayResults(results, tests);
+            }
+            
+            testAnalytics() {
+                const results = document.getElementById('analytics-test-results');
+                const tests = [];
+                
+                // Test Analytics Initialization
+                tests.push({
+                    name: 'Analytics Initialization',
+                    pass: window.analytics && typeof window.analytics.trackCustomEvent === 'function',
+                    message: window.analytics ? 'Analytics system initialized' : 'Analytics system not available'
+                });
+                
+                // Test Local Storage
+                try {
+                    localStorage.setItem('test', 'value');
+                    const testValue = localStorage.getItem('test');
+                    localStorage.removeItem('test');
+                    
+                    tests.push({
+                        name: 'Local Storage Access',
+                        pass: testValue === 'value',
+                        message: testValue === 'value' ? 'Local storage working' : 'Local storage not accessible'
+                    });
+                } catch (e) {
+                    tests.push({
+                        name: 'Local Storage Access',
+                        pass: false,
+                        message: 'Local storage error: ' + e.message
+                    });
+                }
+                
+                // Test Session Storage
+                try {
+                    sessionStorage.setItem('test', 'value');
+                    const testValue = sessionStorage.getItem('test');
+                    sessionStorage.removeItem('test');
+                    
+                    tests.push({
+                        name: 'Session Storage Access',
+                        pass: testValue === 'value',
+                        message: testValue === 'value' ? 'Session storage working' : 'Session storage not accessible'
+                    });
+                } catch (e) {
+                    tests.push({
+                        name: 'Session Storage Access',
+                        pass: false,
+                        message: 'Session storage error: ' + e.message
+                    });
+                }
+                
+                this.displayResults(results, tests);
+            }
+            
+            async testTimeline() {
+                const results = document.getElementById('timeline-test-results');
+                const tests = [];
+                
+                // Test Timeline Class
+                tests.push({
+                    name: 'Timeline Class Available',
+                    pass: typeof InteractiveTimeline !== 'undefined',
+                    message: typeof InteractiveTimeline !== 'undefined' ? 'Timeline class loaded' : 'Timeline class not available'
+                });
+                
+                // Test Timeline Initialization
+                const timelineContainer = document.getElementById('test-timeline');
+                if (timelineContainer && typeof InteractiveTimeline !== 'undefined') {
+                    try {
+                        const sampleData = [
+                            {
+                                "Başlangıç Tarihi": "2024-01-15",
+                                "Bitiş Tarihi": "2024-01-15",
+                                "Faaliyet": "Test Activity",
+                                "Açıklama": "Test activity for integration testing",
+                                "Hedef Kitle": "Test Group",
+                                "TYMM Değer Alanı": "Test Value Area"
+                            }
+                        ];
+                        
+                        const timeline = new InteractiveTimeline(timelineContainer, {
+                            data: sampleData,
+                            view: 'horizontal',
+                            showFilters: true,
+                            showSearch: true
+                        });
+                        
+                        tests.push({
+                            name: 'Timeline Initialization',
+                            pass: true,
+                            message: 'Timeline initialized successfully with sample data'
+                        });
+                        
+                        // Test timeline rendering
+                        setTimeout(() => {
+                            const timelineElements = timelineContainer.querySelectorAll('.timeline-marker');
+                            tests.push({
+                                name: 'Timeline Rendering',
+                                pass: timelineElements.length > 0,
+                                message: timelineElements.length > 0 ? `${timelineElements.length} timeline markers rendered` : 'No timeline markers found'
+                            });
+                            this.displayResults(results, tests);
+                        }, 1000);
+                        
+                    } catch (e) {
+                        tests.push({
+                            name: 'Timeline Initialization',
+                            pass: false,
+                            message: 'Timeline initialization failed: ' + e.message
+                        });
+                    }
+                }
+                
+                this.displayResults(results, tests);
+            }
+            
+            testResponsive() {
+                const results = document.getElementById('responsive-test-results');
+                const tests = [];
+                
+                // Test Viewport Meta Tag
+                const viewportMeta = document.querySelector('meta[name="viewport"]');
+                tests.push({
+                    name: 'Viewport Meta Tag',
+                    pass: viewportMeta && viewportMeta.content.includes('width=device-width'),
+                    message: viewportMeta ? 'Viewport meta tag present' : 'Viewport meta tag missing'
+                });
+                
+                // Test CSS Media Queries
+                const testMediaQuery = window.matchMedia('(max-width: 768px)');
+                tests.push({
+                    name: 'Media Query Support',
+                    pass: typeof testMediaQuery.matches === 'boolean',
+                    message: 'Media queries supported'
+                });
+                
+                // Test Container Responsiveness
+                const container = document.querySelector('.container');
+                if (container) {
+                    const containerStyles = getComputedStyle(container);
+                    tests.push({
+                        name: 'Container Responsiveness',
+                        pass: containerStyles.maxWidth !== 'none',
+                        message: `Container max-width: ${containerStyles.maxWidth}`
+                    });
+                }
+                
+                // Test Grid Responsiveness
+                const gridElement = document.querySelector('.grid');
+                if (gridElement) {
+                    const gridStyles = getComputedStyle(gridElement);
+                    tests.push({
+                        name: 'Grid System',
+                        pass: gridStyles.display === 'grid',
+                        message: 'CSS Grid system working'
+                    });
+                }
+                
+                this.displayResults(results, tests);
+            }
+            
+            testTouch() {
+                const results = document.getElementById('touch-test-results');
+                const tests = [];
+                
+                // Test Touch Event Support
+                tests.push({
+                    name: 'Touch Events Support',
+                    pass: 'ontouchstart' in window || navigator.maxTouchPoints > 0,
+                    message: 'ontouchstart' in window ? 'Touch events supported' : 'Touch events not supported (desktop)'
+                });
+                
+                // Test Touch-friendly Button Sizes
+                const buttons = document.querySelectorAll('.btn');
+                let touchFriendlyButtons = 0;
+                buttons.forEach(btn => {
+                    const rect = btn.getBoundingClientRect();
+                    if (rect.height >= 44 && rect.width >= 44) {
+                        touchFriendlyButtons++;
+                    }
+                });
+                
+                tests.push({
+                    name: 'Touch-friendly Button Sizes',
+                    pass: touchFriendlyButtons > 0,
+                    message: `${touchFriendlyButtons}/${buttons.length} buttons are touch-friendly (44px+)`
+                });
+                
+                // Test Hover Effects
+                const hoverElements = document.querySelectorAll('.hover-lift, .hover-scale');
+                tests.push({
+                    name: 'Hover Effects',
+                    pass: hoverElements.length > 0,
+                    message: `${hoverElements.length} elements with hover effects`
+                });
+                
+                this.displayResults(results, tests);
+            }
+            
+            testDeviceCompatibility() {
+                const results = document.getElementById('device-test-results');
+                const tests = [];
+                
+                // Test Browser Information
+                const userAgent = navigator.userAgent;
+                const browserInfo = this.getBrowserInfo();
+                
+                tests.push({
+                    name: 'Browser Detection',
+                    pass: browserInfo.name !== 'Unknown',
+                    message: `Browser: ${browserInfo.name} ${browserInfo.version}`
+                });
+                
+                // Test Device Type Detection
+                const deviceType = this.getDeviceType();
+                tests.push({
+                    name: 'Device Type Detection',
+                    pass: ['mobile', 'tablet', 'desktop'].includes(deviceType),
+                    message: `Device type: ${deviceType}`
+                });
+                
+                // Test Screen Resolution
+                const screenInfo = {
+                    width: screen.width,
+                    height: screen.height,
+                    availWidth: screen.availWidth,
+                    availHeight: screen.availHeight,
+                    pixelRatio: window.devicePixelRatio || 1
+                };
+                
+                tests.push({
+                    name: 'Screen Information',
+                    pass: screenInfo.width > 0 && screenInfo.height > 0,
+                    message: `Screen: ${screenInfo.width}x${screenInfo.height}, Ratio: ${screenInfo.pixelRatio}`
+                });
+                
+                // Test Viewport Information
+                const viewportInfo = {
+                    width: window.innerWidth,
+                    height: window.innerHeight
+                };
+                
+                tests.push({
+                    name: 'Viewport Information',
+                    pass: viewportInfo.width > 0 && viewportInfo.height > 0,
+                    message: `Viewport: ${viewportInfo.width}x${viewportInfo.height}`
+                });
+                
+                // Test Feature Support
+                const features = {
+                    localStorage: typeof Storage !== 'undefined',
+                    sessionStorage: typeof Storage !== 'undefined',
+                    geolocation: 'geolocation' in navigator,
+                    webGL: this.hasWebGL(),
+                    canvas: this.hasCanvas(),
+                    svg: this.hasSVG()
+                };
+                
+                const supportedFeatures = Object.entries(features).filter(([key, value]) => value).length;
+                tests.push({
+                    name: 'Feature Support',
+                    pass: supportedFeatures >= 4,
+                    message: `${supportedFeatures}/6 features supported: ${Object.entries(features).filter(([k,v]) => v).map(([k]) => k).join(', ')}`
+                });
+                
+                this.displayResults(results, tests);
+            }
+            
+            getBrowserInfo() {
+                const ua = navigator.userAgent;
+                if (ua.includes('Chrome')) return { name: 'Chrome', version: this.extractVersion(ua, 'Chrome/') };
+                if (ua.includes('Firefox')) return { name: 'Firefox', version: this.extractVersion(ua, 'Firefox/') };
+                if (ua.includes('Safari') && !ua.includes('Chrome')) return { name: 'Safari', version: this.extractVersion(ua, 'Version/') };
+                if (ua.includes('Edge')) return { name: 'Edge', version: this.extractVersion(ua, 'Edge/') };
+                return { name: 'Unknown', version: '' };
+            }
+            
+            extractVersion(ua, prefix) {
+                const index = ua.indexOf(prefix);
+                if (index === -1) return '';
+                const version = ua.substring(index + prefix.length);
+                return version.split(' ')[0].split('.')[0];
+            }
+            
+            getDeviceType() {
+                const width = window.innerWidth;
+                if (width < 768) return 'mobile';
+                if (width < 1024) return 'tablet';
+                return 'desktop';
+            }
+            
+            hasWebGL() {
+                try {
+                    const canvas = document.createElement('canvas');
+                    return !!(canvas.getContext('webgl') || canvas.getContext('experimental-webgl'));
+                } catch (e) {
+                    return false;
+                }
+            }
+            
+            hasCanvas() {
+                try {
+                    const canvas = document.createElement('canvas');
+                    return !!(canvas.getContext && canvas.getContext('2d'));
+                } catch (e) {
+                    return false;
+                }
+            }
+            
+            hasSVG() {
+                return !!(document.createElementNS && document.createElementNS('http://www.w3.org/2000/svg', 'svg').createSVGRect);
+            }
+            
+            displayResults(container, tests) {
+                container.innerHTML = tests.map(test => {
+                    const className = test.pass ? 'test-pass' : 'test-fail';
+                    const icon = test.pass ? '✅' : '❌';
+                    return `
+                        <div class="test-result ${className}">
+                            ${icon} <strong>${test.name}:</strong> ${test.message}
+                        </div>
+                    `;
+                }).join('');
+            }
+        }
+        
+        // Global test functions
+        function testJSONValidation() {
+            const results = document.getElementById('json-test-results');
+            
+            if (window.jsonValidator) {
+                const validationResults = window.jsonValidator.getValidationResults();
+                const tests = [];
+                
+                Object.entries(validationResults).forEach(([filename, result]) => {
+                    tests.push({
+                        name: `${filename} Validation`,
+                        pass: result.status === 'passed',
+                        message: `Status: ${result.status}, Errors: ${result.errors.length}, Warnings: ${result.warnings.length}`
+                    });
+                });
+                
+                const tester = new IntegrationTester();
+                tester.displayResults(results, tests);
+            } else {
+                results.innerHTML = '<div class="test-result test-fail">❌ JSON Validator not available</div>';
+            }
+        }
+        
+        function testSpecialFeatures() {
+            const results = document.getElementById('json-test-results');
+            
+            if (window.specialFeaturesValidator) {
+                const features = window.specialFeaturesValidator.features;
+                const tests = [];
+                
+                Object.entries(features).forEach(([feature, working]) => {
+                    tests.push({
+                        name: feature.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase()),
+                        pass: working,
+                        message: working ? 'Feature working correctly' : 'Feature has issues'
+                    });
+                });
+                
+                const tester = new IntegrationTester();
+                tester.displayResults(results, tests);
+            } else {
+                results.innerHTML = '<div class="test-result test-fail">❌ Special Features Validator not available</div>';
+            }
+        }
+        
+        function testErrorHandling() {
+            const results = document.getElementById('json-test-results');
+            
+            if (window.errorHandler) {
+                const tests = [
+                    {
+                        name: 'Error Handler Initialization',
+                        pass: true,
+                        message: 'Error handler is active and monitoring'
+                    },
+                    {
+                        name: 'Error Logging',
+                        pass: typeof window.errorHandler.reportError === 'function',
+                        message: 'Error reporting function available'
+                    },
+                    {
+                        name: 'Network Status Detection',
+                        pass: navigator.onLine !== undefined,
+                        message: `Network status: ${navigator.onLine ? 'Online' : 'Offline'}`
+                    }
+                ];
+                
+                // Test error reporting
+                try {
+                    window.errorHandler.reportError('Test error for integration testing', 'test');
+                    tests.push({
+                        name: 'Error Reporting Test',
+                        pass: true,
+                        message: 'Successfully reported test error'
+                    });
+                } catch (e) {
+                    tests.push({
+                        name: 'Error Reporting Test',
+                        pass: false,
+                        message: 'Failed to report test error'
+                    });
+                }
+                
+                const tester = new IntegrationTester();
+                tester.displayResults(results, tests);
+            } else {
+                results.innerHTML = '<div class="test-result test-fail">❌ Error Handler not available</div>';
+            }
+        }
+        
+        function testAnalyticsTracking() {
+            if (window.analytics) {
+                window.analytics.trackCustomEvent('integration_test', {
+                    testType: 'manual_trigger',
+                    timestamp: Date.now()
+                });
+                
+                const results = document.getElementById('analytics-test-results');
+                const newResult = document.createElement('div');
+                newResult.className = 'test-result test-pass';
+                newResult.innerHTML = '✅ <strong>Manual Analytics Test:</strong> Event tracked successfully';
+                results.appendChild(newResult);
+            }
+        }
+        
+        function exportAnalyticsData() {
+            if (window.analytics && typeof window.analytics.exportAnalyticsData === 'function') {
+                window.analytics.exportAnalyticsData();
+                
+                const results = document.getElementById('analytics-test-results');
+                const newResult = document.createElement('div');
+                newResult.className = 'test-result test-pass';
+                newResult.innerHTML = '✅ <strong>Analytics Export:</strong> Data export initiated';
+                results.appendChild(newResult);
+            }
+        }
+        
+        function runPerformanceTest() {
+            const results = document.getElementById('performance-test-results');
+            const startTime = performance.now();
+            
+            // Simulate some work
+            const testArray = Array.from({length: 10000}, (_, i) => i);
+            const processedArray = testArray.map(x => x * 2).filter(x => x % 2 === 0);
+            
+            const endTime = performance.now();
+            const duration = endTime - startTime;
+            
+            // Get memory info if available
+            const memoryInfo = performance.memory ? {
+                used: Math.round(performance.memory.usedJSHeapSize / 1024 / 1024),
+                total: Math.round(performance.memory.totalJSHeapSize / 1024 / 1024),
+                limit: Math.round(performance.memory.jsHeapSizeLimit / 1024 / 1024)
+            } : null;
+            
+            const tests = [
+                {
+                    name: 'JavaScript Performance',
+                    pass: duration < 100,
+                    message: `Array processing took ${duration.toFixed(2)}ms`
+                }
+            ];
+            
+            if (memoryInfo) {
+                tests.push({
+                    name: 'Memory Usage',
+                    pass: memoryInfo.used < memoryInfo.limit * 0.8,
+                    message: `Memory: ${memoryInfo.used}MB / ${memoryInfo.total}MB (Limit: ${memoryInfo.limit}MB)`
+                });
+            }
+            
+            // Test page load performance
+            const navigation = performance.getEntriesByType('navigation')[0];
+            if (navigation) {
+                const loadTime = navigation.loadEventEnd - navigation.navigationStart;
+                tests.push({
+                    name: 'Page Load Performance',
+                    pass: loadTime < 3000,
+                    message: `Page loaded in ${loadTime.toFixed(0)}ms`
+                });
+            }
+            
+            const tester = new IntegrationTester();
+            tester.displayResults(results, tests);
+        }
+        
+        // Initialize tests when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                new IntegrationTester();
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

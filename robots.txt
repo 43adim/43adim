@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://your-username.github.io/43adim-web/sitemap.xml
+
+# Disallow monitoring page from search engines
+Disallow: /monitor.html
+
+# Allow all other pages
+Allow: /index.html
+Allow: /proje.html
+Allow: /assets/
+
+# Crawl delay (optional)
+Crawl-delay: 1

@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="43 ADIM Projesi detay sayfası - Kütahya İl MEM AR-GE Birimi eğitim projelerinin ayrıntılı bilgileri">
+  <meta name="keywords" content="43 ADIM, proje detayı, Kütahya, MEM, eğitim">
+  
+  <!-- DNS Prefetch -->
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+  
+  <!-- Preload Critical Resources -->
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.3/dist/tailwind.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.3/dist/tailwind.min.css"></noscript>
+  
+  <!-- Critical CSS Inline -->
+  <style>
+    :root{--color-primary:#2563eb;--color-white:#ffffff;--color-gray-900:#111827;--font-family-sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif}*{box-sizing:border-box;margin:0;padding:0}body{font-family:var(--font-family-sans);line-height:1.6;color:var(--color-gray-900);background-color:var(--color-white);-webkit-font-smoothing:antialiased}.modern-header{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(255,255,255,0.95);backdrop-filter:blur(8px);border-bottom:1px solid rgba(0,0,0,0.1)}.container{max-width:1200px;margin:0 auto;padding:0 1rem}
+  </style>
+  
+  <!-- Load Non-Critical CSS Asynchronously -->
+  <link rel="preload" href="assets/css/proje.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="assets/css/proje.css"></noscript>
+  
+  <title id="page-title">Proje Detayı | 43 ADIM</title>
+</head>
+
+<body class="antialiased">
+
+  <!-- HEADER -->
+  <header id="proje-header" class="modern-header">
+    <div class="header-container">
+      <!-- Logo and Title Section -->
+      <div class="header-brand">
+        <div class="project-logo-container">
+          <img id="project-logo" src="assets/images/common/logo-placeholder.svg" alt="Proje Logosu" class="project-logo">
+        </div>
+        <div class="brand-text">
+          <h1 id="proje-adi" class="project-title">Proje Adı</h1>
+          <div class="breadcrumb">
+            <a href="index.html" class="breadcrumb-link">Ana Sayfa</a>
+            <span class="breadcrumb-separator">›</span>
+            <span class="breadcrumb-current">Proje Detayı</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <nav id="desktop-nav" class="desktop-nav">
+        <a href="#amac" class="nav-link">Amaç</a>
+        <a href="#hedefkitle" class="nav-link">Hedef Kitle</a>
+        <a href="#adimlar" class="nav-link">Uygulama Adımları</a>
+        <a href="#timeline" class="nav-link">Zaman Çizelgesi</a>
+        <a href="#faaliyetler" class="nav-link">Faaliyetler</a>
+        <a href="#belgeler" class="nav-link">Belgeler</a>
+        <a href="#degerlendirme" class="nav-link">Değerlendirme</a>
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Menüyü Aç/Kapat">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <nav id="mobile-nav" class="mobile-nav">
+      <a href="#amac" class="mobile-nav-link">Amaç</a>
+      <a href="#hedefkitle" class="mobile-nav-link">Hedef Kitle</a>
+      <a href="#adimlar" class="mobile-nav-link">Uygulama Adımları</a>
+      <a href="#timeline" class="mobile-nav-link">Zaman Çizelgesi</a>
+      <a href="#faaliyetler" class="mobile-nav-link">Faaliyetler</a>
+      <a href="#belgeler" class="mobile-nav-link">Belgeler</a>
+      <a href="#degerlendirme" class="mobile-nav-link">Değerlendirme</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section id="hero-bg" class="modern-hero">
+    <div class="hero-container">
+      <div class="hero-content">
+        <h2 id="hero-title" class="hero-title"></h2>
+        <p id="hero-desc" class="hero-description"></p>
+        <div class="hero-actions">
+          <button class="hero-btn primary" onclick="document.getElementById('amac').scrollIntoView({behavior: 'smooth'})">
+            Projeyi Keşfet
+          </button>
+          <button class="hero-btn secondary" onclick="document.getElementById('timeline').scrollIntoView({behavior: 'smooth'})">
+            Zaman Çizelgesini Gör
+          </button>
+        </div>
+      </div>
+      <div class="hero-decoration">
+        <div class="floating-element element-1"></div>
+        <div class="floating-element element-2"></div>
+        <div class="floating-element element-3"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AMAÇ -->
+  <section id="amac" class="content-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">🎯 Amaç</h2>
+        <div class="section-divider"></div>
+      </div>
+      
+      <div class="content-card">
+        <div class="card-content">
+          <p id="amac-metin" class="content-text"></p>
+        </div>
+      </div>
+
+      <!-- Veli Katılım Sistemi için özel puanlama tablosu -->
+      <div id="puanlama-sistemi" class="scoring-system hidden">
+        <div class="collapsible-panel">
+          <button class="panel-header" onclick="togglePanel('scoring-content')">
+            <h3 class="panel-title">📊 Puanlama Sistemi</h3>
+            <span class="panel-toggle">▼</span>
+          </button>
+          
+          <div id="scoring-content" class="panel-content active">
+            <div class="responsive-table-container">
+              <table class="modern-table">
+                <thead>
+                  <tr>
+                    <th>Kategori</th>
+                    <th>Örnek Etkinlikler</th>
+                    <th>Puan</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td data-label="Kategori">
+                      <span class="category-badge educational">Eğitimsel Katılım</span>
+                    </td>
+                    <td data-label="Örnek Etkinlikler">Veli toplantısı, bireysel görüşmeler, rehberlik oturumları, psikososyal destek seminerleri</td>
+                    <td data-label="Puan">
+                      <span class="score-badge high">10</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td data-label="Kategori">
+                      <span class="category-badge academic">Akademik Destek</span>
+                    </td>
+                    <td data-label="Örnek Etkinlikler">Ödev takibi, EBA desteği, sınav hazırlık, okuma alışkanlığı, proje ödevleri</td>
+                    <td data-label="Puan">
+                      <span class="score-badge high">10</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td data-label="Kategori">
+                      <span class="category-badge informative">Bilgilendirici Etkinlik</span>
+                    </td>
+                    <td data-label="Örnek Etkinlikler">Seminer, atölye, sağlık bilgilendirmeleri, dijital toplantılar</td>
+                    <td data-label="Puan">
+                      <span class="score-badge high">10</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td data-label="Kategori">
+                      <span class="category-badge volunteer">Gönüllü Faaliyet</span>
+                    </td>
+                    <td data-label="Örnek Etkinlikler">Kurul üyeliği, organizasyon, toplumsal projeler, yardım kampanyaları</td>
+                    <td data-label="Puan">
+                      <span class="score-badge premium">15</span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td data-label="Kategori">
+                      <span class="category-badge social">Sosyal Etkinlik</span>
+                    </td>
+                    <td data-label="Örnek Etkinlikler">Şenlik, gezi, kermes, kültürel etkinlikler, çevre kampanyaları</td>
+                    <td data-label="Puan">
+                      <span class="score-badge medium">5</span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="participation-levels">
+              <div class="level-card low">
+                <div class="level-icon">📉</div>
+                <h4 class="level-title">Düşük Katılım</h4>
+                <p class="level-range">0-49 puan</p>
+              </div>
+              <div class="level-card medium">
+                <div class="level-icon">📊</div>
+                <h4 class="level-title">Orta Düzey Katılım</h4>
+                <p class="level-range">50-99 puan</p>
+              </div>
+              <div class="level-card high">
+                <div class="level-icon">📈</div>
+                <h4 class="level-title">Yüksek Katılım</h4>
+                <p class="level-range">100+ puan</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HEDEF KİTLE -->
+  <section id="hedefkitle" class="content-section alt-bg">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">👥 Hedef Kitle</h2>
+        <div class="section-divider"></div>
+      </div>
+      
+      <div class="content-card">
+        <div class="card-content">
+          <div class="target-audience-content">
+            <div class="audience-icon">
+              <div class="icon-circle">
+                <span class="icon-emoji">🎯</span>
+              </div>
+            </div>
+            <p id="hedefkitle-metin" class="content-text"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- UYGULAMA ADIMLARI -->
+  <section id="adimlar" class="content-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">📋 Uygulama Adımları</h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle">Projenin başarılı bir şekilde uygulanması için izlenmesi gereken adımlar</p>
+      </div>
+      
+      <div id="adimlar-container" class="modern-steps"></div>
+    </div>
+  </section>
+
+  <!-- ZAMAN ÇİZELGESİ -->
+  <section id="timeline" class="content-section alt-bg">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">📅 İnteraktif Zaman Çizelgesi</h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle">Proje faaliyetlerinin görsel zaman çizelgesi ve ilerleme takibi</p>
+      </div>
+      
+      <div id="project-timeline"></div>
+    </div>
+  </section>
+
+  <!-- FAALİYETLER -->
+  <section id="faaliyetler" class="content-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">📅 Faaliyet Listesi</h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle">Proje kapsamında gerçekleştirilen ve planlanmış faaliyetler</p>
+      </div>
+
+      <div class="activities-container">
+        <div class="activities-header">
+          <div class="activities-status">
+            <span id="faaliyet-status" class="status-text">Veri yükleniyor...</span>
+          </div>
+          
+          <div class="activities-controls">
+            <button class="view-toggle active" data-view="table" onclick="toggleActivitiesView('table')">
+              <span class="toggle-icon">📊</span>
+              Tablo Görünümü
+            </button>
+            <button class="view-toggle" data-view="cards" onclick="toggleActivitiesView('cards')">
+              <span class="toggle-icon">📋</span>
+              Kart Görünümü
+            </button>
+          </div>
+        </div>
+
+        <!-- Table View -->
+        <div id="table-view" class="activities-view active">
+          <div class="responsive-table-wrapper">
+            <table class="activities-table">
+              <thead>
+                <tr>
+                  <th>Başlangıç Tarihi</th>
+                  <th>Bitiş Tarihi</th>
+                  <th>Faaliyet</th>
+                  <th>Açıklama</th>
+                  <th>Hedef Kitle</th>
+                  <th>TYMM Değer Alanı</th>
+                </tr>
+              </thead>
+              <tbody id="faaliyet-tablo-body"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Card View -->
+        <div id="cards-view" class="activities-view">
+          <div id="faaliyet-cards-container" class="activities-cards"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BELGELER -->
+  <section id="belgeler" class="content-section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">📁 Belgeler ve Medya</h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle">Proje ile ilgili belgeler, görseller ve medya dosyaları</p>
+      </div>
+      
+      <div class="collapsible-panel">
+        <button class="panel-header" onclick="togglePanel('documents-content')">
+          <h3 class="panel-title">📂 Proje Belgeleri</h3>
+          <span class="panel-toggle">▼</span>
+        </button>
+        
+        <div id="documents-content" class="panel-content">
+          <div id="belge-listesi" class="document-grid">
+            <div class="document-card">
+              <div class="document-icon">📄</div>
+              <div class="document-info">
+                <h4 class="document-title">Proje Broşürü</h4>
+                <p class="document-desc">PDF formatında detaylı proje bilgileri</p>
+              </div>
+              <button class="document-action">İndir</button>
+            </div>
+            
+            <div class="document-card">
+              <div class="document-icon">📸</div>
+              <div class="document-info">
+                <h4 class="document-title">Proje Afişi</h4>
+                <p class="document-desc">Yüksek çözünürlüklü afiş görseli</p>
+              </div>
+              <button class="document-action">Görüntüle</button>
+            </div>
+            
+            <div class="document-card">
+              <div class="document-icon">🎥</div>
+              <div class="document-info">
+                <h4 class="document-title">Tanıtım Videosu</h4>
+                <p class="document-desc">Proje tanıtım ve uygulama videosu</p>
+              </div>
+              <button class="document-action">İzle</button>
+            </div>
+          </div>
+          
+          <div class="image-gallery">
+            <h4 class="gallery-title">Proje Görselleri</h4>
+            <div id="project-gallery" class="gallery-grid">
+              <!-- Dinamik olarak yüklenecek -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEĞERLENDİRME -->
+  <section id="degerlendirme" class="content-section alt-bg">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">📊 İzleme ve Değerlendirme</h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle">Proje başarısının ölçülmesi ve değerlendirilmesi</p>
+      </div>
+      
+      <div class="evaluation-grid">
+        <div class="evaluation-card">
+          <div class="eval-icon">📈</div>
+          <h3 class="eval-title">Proje Sonuçları</h3>
+          <p class="eval-desc">Belirlenen hedeflere ulaşma oranı ve çıktıların analizi</p>
+        </div>
+        
+        <div class="evaluation-card">
+          <div class="eval-icon">👥</div>
+          <h3 class="eval-title">Katılım Analizi</h3>
+          <p class="eval-desc">Öğrenci, öğretmen ve veli katılım oranlarının değerlendirilmesi</p>
+        </div>
+        
+        <div class="evaluation-card">
+          <div class="eval-icon">📋</div>
+          <h3 class="eval-title">Etkinlik Verileri</h3>
+          <p class="eval-desc">Gerçekleştirilen etkinliklerin etkinlik ve verimlilik analizi</p>
+        </div>
+        
+        <div class="evaluation-card">
+          <div class="eval-icon">💬</div>
+          <h3 class="eval-title">Geri Bildirimler</h3>
+          <p class="eval-desc">Okul yönetimi ve paydaşlardan alınan değerlendirmeler</p>
+        </div>
+      </div>
+      
+      <div class="content-card">
+        <div class="card-content">
+          <p class="content-text">
+            Proje sonuçları, öğrenci katılımı, etkinlik verileri ve okul geri bildirimleri üzerinden değerlendirilir. 
+            Sürekli iyileştirme yaklaşımı ile proje etkinliği artırılır ve gelecek uygulamalar için öneriler geliştirilir.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <script src="assets/js/footer.js"></script>
+
+  <!-- Performance Optimizations -->
+  <script src="assets/js/performance.js"></script>
+  
+  <!-- PROJE.JS -->
+  <script src="assets/js/timeline.js"></script>
+  <script src="assets/js/proje.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <!-- Lazy Load Non-Critical CSS -->
+  <script>
+    const loadCSS = (href) => {
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = href;
+      link.media = 'print';
+      link.onload = () => { link.media = 'all'; };
+      document.head.appendChild(link);
+    };
+    
+    setTimeout(() => {
+      loadCSS('assets/css/timeline.css');
+      loadCSS('assets/css/footer.css');
+    }, 100);
+  </script>
+
+</body>
+
+</html>

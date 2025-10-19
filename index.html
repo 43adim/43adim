@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kütahya İl MEM AR-GE Birimi tarafından geliştirilen 43 ADIM eğitim projelerinin modern web sitesi. 9 farklı proje ile öğrencilerin potansiyelini ortaya çıkarıyoruz.">
+  <meta name="keywords" content="43 ADIM, Kütahya, MEM, eğitim, proje, AR-GE, öğrenci, öğretmen, veli">
+  <meta name="author" content="Kütahya İl MEM AR-GE Birimi">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://your-username.github.io/43adim-web/">
+  <meta property="og:title" content="43 ADIM Projesi | Kütahya İl MEM AR-GE">
+  <meta property="og:description" content="Kütahya'da eğitimi güçlendiren, öğrencilerin potansiyelini ortaya çıkaran 43 adımda eğitim yolculuğu">
+  <meta property="og:image" content="https://your-username.github.io/43adim-web/assets/images/common/og-image.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://your-username.github.io/43adim-web/">
+  <meta property="twitter:title" content="43 ADIM Projesi | Kütahya İl MEM AR-GE">
+  <meta property="twitter:description" content="Kütahya'da eğitimi güçlendiren, öğrencilerin potansiyelini ortaya çıkaran 43 adımda eğitim yolculuğu">
+  <meta property="twitter:image" content="https://your-username.github.io/43adim-web/assets/images/common/og-image.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="assets/images/common/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/common/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/common/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/common/favicon-16x16.png">
+
+  <!-- DNS Prefetch -->
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  
+  <!-- Preload Critical Resources -->
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.3/dist/tailwind.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.3/dist/tailwind.min.css"></noscript>
+  
+  <!-- Critical CSS Inline -->
+  <style>
+    /* Critical CSS will be inlined here for faster rendering */
+    :root{--color-primary:#2563eb;--color-white:#ffffff;--color-gray-50:#f9fafb;--color-gray-900:#111827;--font-family-sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;--shadow-sm:0 1px 2px 0 rgba(0,0,0,0.05);--transition-base:250ms ease-in-out}*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:var(--font-family-sans);line-height:1.6;color:var(--color-gray-900);background-color:var(--color-white);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden}.hero-title{font-size:3rem;font-weight:800;line-height:1.1;margin-bottom:1.5rem}.container{max-width:1200px;margin:0 auto;padding:0 1rem}@keyframes fade-in{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}.animate-fade-in{animation:fade-in 0.6s ease-out}@media (max-width:768px){.hero-title{font-size:2rem}.container{padding:0 0.75rem}}
+  </style>
+  
+  <!-- Load Non-Critical CSS Asynchronously -->
+  <link rel="preload" href="assets/css/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="assets/css/main.css"></noscript>
+  
+  <title>43 ADIM Projesi | Kütahya İl MEM AR-GE</title>
+</head>
+
+<body class="antialiased">
+
+  <!-- 🧭 Navigation Menu -->
+  <nav class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-sm shadow-sm z-50 transition-all duration-300" id="main-nav">
+    <div class="container mx-auto px-4 py-3">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center space-x-2">
+          <div class="w-8 h-8 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
+            <span class="text-white font-bold text-sm">43</span>
+          </div>
+          <span class="font-bold text-gray-900">43 ADIM</span>
+        </div>
+        
+        <div class="hidden md:flex items-center space-x-6">
+          <a href="#amaclar" class="nav-link text-gray-600 hover:text-blue-600 font-medium">Amaçlar</a>
+          <a href="#hakkinda" class="nav-link text-gray-600 hover:text-blue-600 font-medium">Hakkında</a>
+          <a href="#projeler" class="nav-link text-gray-600 hover:text-blue-600 font-medium">Projeler</a>
+          <a href="#ciktilar" class="nav-link text-gray-600 hover:text-blue-600 font-medium">Çıktılar</a>
+        </div>
+        
+        <!-- Mobile Menu Button -->
+        <button class="md:hidden p-2 rounded-lg hover:bg-gray-100" id="mobile-menu-btn">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+      
+      <!-- Mobile Menu -->
+      <div class="md:hidden mt-4 pb-4 border-t border-gray-200 hidden" id="mobile-menu">
+        <div class="flex flex-col space-y-3 pt-4">
+          <a href="#amaclar" class="nav-link text-gray-600 hover:text-blue-600 font-medium py-2">Amaçlar</a>
+          <a href="#hakkinda" class="nav-link text-gray-600 hover:text-blue-600 font-medium py-2">Hakkında</a>
+          <a href="#projeler" class="nav-link text-gray-600 hover:text-blue-600 font-medium py-2">Projeler</a>
+          <a href="#ciktilar" class="nav-link text-gray-600 hover:text-blue-600 font-medium py-2">Çıktılar</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 🏠 Modern Hero Section -->
+  <section class="hero relative overflow-hidden">
+    <!-- Animated Background Elements -->
+    <div class="absolute inset-0 bg-gradient-to-br from-blue-900 via-blue-700 to-purple-800"></div>
+    <div class="absolute inset-0 opacity-20">
+      <div class="absolute top-10 left-10 w-32 h-32 bg-white rounded-full animate-pulse"></div>
+      <div class="absolute top-40 right-20 w-24 h-24 bg-yellow-300 rounded-full animate-bounce"></div>
+      <div class="absolute bottom-20 left-1/4 w-16 h-16 bg-green-400 rounded-full animate-pulse"></div>
+    </div>
+
+    <div class="container relative z-10 pt-24 pb-20 lg:pt-32 lg:pb-32">
+      <div class="text-center text-white">
+        <!-- Main Title -->
+        <h1 class="hero-title animate-fade-in mb-6">
+          43 ADIM Projesi
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="hero-subtitle animate-fade-in animate-delay-200 mb-12 max-w-4xl mx-auto">
+          Kütahya'da öğrenme kültürünü, toplumsal değerlerle harmanlayarak güçlendiren 43 adımda eğitim yolculuğu
+        </p>
+
+        <!-- Project Statistics -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12 animate-fade-in animate-delay-300">
+          <div class="text-center">
+            <div class="text-4xl lg:text-5xl font-bold mb-2 counter" data-target="9">0</div>
+            <div class="text-sm lg:text-base opacity-90">Aktif Proje</div>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl lg:text-5xl font-bold mb-2 counter" data-target="43">0</div>
+            <div class="text-sm lg:text-base opacity-90">Eğitim Adımı</div>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl lg:text-5xl font-bold mb-2 counter" data-target="1000">0</div>
+            <div class="text-sm lg:text-base opacity-90">Katılımcı Öğrenci</div>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl lg:text-5xl font-bold mb-2 counter" data-target="50">0</div>
+            <div class="text-sm lg:text-base opacity-90">Katılımcı Okul</div>
+          </div>
+        </div>
+
+        <!-- Call-to-Action Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in animate-delay-500">
+          <a href="#projeler" class="btn btn-primary btn-lg hover-lift">
+            <span>Projeleri Keşfet</span>
+            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3">
+              </path>
+            </svg>
+          </a>
+          <a href="#hakkinda" class="btn btn-secondary btn-lg hover-lift">
+            <span>Daha Fazla Bilgi</span>
+            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <div class="w-6 h-10 border-2 border-white rounded-full flex justify-center">
+        <div class="w-1 h-3 bg-white rounded-full mt-2 animate-pulse"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🗣️ Sunuş Alanı -->
+  <section id="sunus" class="max-w-6xl mx-auto py-16 px-6 grid md:grid-cols-2 gap-8">
+    <!-- İl Millî Eğitim Müdürü -->
+    <div class="bg-white shadow-md rounded-xl p-6 border-t-4 border-blue-600 hover:shadow-lg transition-shadow duration-300">
+      <div class="flex items-start gap-4 mb-4">
+        <div class="flex-shrink-0">
+          <img data-src="assets/images/speakers/il-muduru.jpg" 
+               alt="İl Millî Eğitim Müdürü" 
+               class="w-16 h-16 rounded-full object-cover border-2 border-blue-200 shadow-sm lazy"
+               src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%232563eb'/%3E%3C/svg%3E"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="w-16 h-16 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-lg shadow-sm" style="display: none;">
+            İM
+          </div>
+        </div>
+        <div class="flex-1">
+          <h2 class="text-xl font-bold text-blue-700 mb-2">İl Millî Eğitim Müdürü</h2>
+          <div class="text-sm text-blue-600 font-medium mb-3">Kütahya İl MEM</div>
+        </div>
+      </div>
+      <p class="text-gray-700 leading-relaxed">
+        Kütahya'da eğitimi güçlendirmek, öğrencilerimizin potansiyelini ortaya çıkarmak için çıktığımız bu yolculukta
+        her adım, yeni bir farkındalığın kapısını aralamaktadır.
+      </p>
+      <div class="mt-4 flex items-center text-sm text-gray-500">
+        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-3.582 8-8 8a8.955 8.955 0 01-4.126-.98L3 20l1.98-5.126A8.955 8.955 0 013 12c0-4.418 3.582-8 8-8s8 3.582 8 8z"></path>
+        </svg>
+        Proje Koordinatörü
+      </div>
+    </div>
+
+    <!-- İl Millî Eğitim Müdür Yardımcısı -->
+    <div class="bg-white shadow-md rounded-xl p-6 border-t-4 border-yellow-500 hover:shadow-lg transition-shadow duration-300">
+      <div class="flex items-start gap-4 mb-4">
+        <div class="flex-shrink-0">
+          <img data-src="assets/images/speakers/mudur-yardimcisi.jpg" 
+               alt="İl Millî Eğitim Müdür Yardımcısı" 
+               class="w-16 h-16 rounded-full object-cover border-2 border-yellow-200 shadow-sm lazy"
+               src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%23eab308'/%3E%3C/svg%3E"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="w-16 h-16 rounded-full bg-yellow-600 flex items-center justify-center text-white font-bold text-lg shadow-sm" style="display: none;">
+            MY
+          </div>
+        </div>
+        <div class="flex-1">
+          <h2 class="text-xl font-bold text-yellow-600 mb-2">İl Millî Eğitim Müdür Yardımcısı</h2>
+          <div class="text-sm text-yellow-600 font-medium mb-3">Kütahya İl MEM</div>
+        </div>
+      </div>
+      <p class="text-gray-700 leading-relaxed">
+        43 ADIM Projesi, sadece bir eğitim hareketi değil; öğrencilerimiz, öğretmenlerimiz ve velilerimiz için
+        sürdürülebilir bir öğrenme kültürünün temelidir.
+      </p>
+      <div class="mt-4 flex items-center text-sm text-gray-500">
+        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        </svg>
+        Proje Danışmanı
+      </div>
+    </div>
+  </section>
+
+  <!-- 🎯 Projenin Genel Amaçları -->
+  <section id="amaclar" class="bg-gray-50 py-16 px-6 text-center">
+    <h2 class="text-3xl font-bold text-blue-700 mb-8">Projenin Genel Amaçları</h2>
+    <div class="max-w-4xl mx-auto text-lg text-gray-700 leading-relaxed">
+      Öğrencilerin yetenek ve potansiyellerinin erken yaşta keşfedilmesi, bilimsel, kültürel, sanatsal ve toplumsal
+      alanlarda aktif bireyler olarak yetişmelerine destek sağlamak.
+    </div>
+  </section>
+
+  <!-- 🏛️ Hakkında -->
+  <section id="hakkinda" class="max-w-5xl mx-auto py-16 px-6 text-center">
+    <h2 class="text-3xl font-bold text-blue-700 mb-6">Hakkında</h2>
+    <p class="text-gray-700 leading-relaxed max-w-3xl mx-auto">
+      43 ADIM Projesi, Kütahya İl Millî Eğitim Müdürlüğü AR-GE Birimi ve bağlı alt komisyonların ortak çalışmasıyla
+      geliştirilmiştir.
+      İl genelinde yürütülen eğitim faaliyetlerinin etkililiğini artırmayı ve yenilikçi uygulamaları yaygınlaştırmayı
+      hedefler.
+    </p>
+  </section>
+
+  <!-- 👥 Hedef Kitle -->
+  <section id="hedefkitle" class="bg-gray-100 py-16 px-6">
+    <h2 class="text-3xl font-bold text-blue-700 text-center mb-8">Hedef Kitle</h2>
+    <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+      <div class="p-4 bg-white rounded-lg shadow">
+        <p class="font-semibold">Öğrenciler</p>
+      </div>
+      <div class="p-4 bg-white rounded-lg shadow">
+        <p class="font-semibold">Öğretmenler</p>
+      </div>
+      <div class="p-4 bg-white rounded-lg shadow">
+        <p class="font-semibold">Veliler</p>
+      </div>
+      <div class="p-4 bg-white rounded-lg shadow">
+        <p class="font-semibold">Okul İdareleri</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🤝 Paydaşlar -->
+  <section id="paydaslar" class="py-16 px-6 text-center">
+    <h2 class="text-3xl font-bold text-blue-700 mb-8">Proje Paydaşları</h2>
+    <div class="flex flex-wrap justify-center items-center gap-10 opacity-90">
+      <img src="assets/images/meb-logo.png" alt="MEB" class="h-16">
+      <img src="assets/images/kutahya-mem-logo.png" alt="Kütahya MEM" class="h-16">
+      <img src="assets/images/arge-birimi-logo.png" alt="AR-GE Birimi" class="h-16">
+    </div>
+  </section>
+
+  <!-- 📈 Beklenen Çıktılar -->
+  <section id="ciktilar" class="bg-gray-50 py-16 px-6">
+    <h2 class="text-3xl font-bold text-blue-700 text-center mb-10">Beklenen Çıktılar</h2>
+    <ol class="relative border-l-4 border-blue-600 max-w-3xl mx-auto">
+      <li class="mb-10 ml-6">
+        <div class="absolute w-6 h-6 bg-blue-600 rounded-full -left-3"></div>
+        <h3 class="text-lg font-semibold text-blue-700">Yeteneklerin Keşfi</h3>
+        <p class="text-gray-700">Öğrencilerin potansiyellerinin erken yaşta fark edilmesi</p>
+      </li>
+      <li class="mb-10 ml-6">
+        <div class="absolute w-6 h-6 bg-blue-600 rounded-full -left-3"></div>
+        <h3 class="text-lg font-semibold text-blue-700">Katılımın Artması</h3>
+        <p class="text-gray-700">Velilerin, öğretmenlerin ve kurumların aktif iş birliği</p>
+      </li>
+      <li class="ml-6">
+        <div class="absolute w-6 h-6 bg-blue-600 rounded-full -left-3"></div>
+        <h3 class="text-lg font-semibold text-blue-700">Sürdürülebilir Eğitim Kültürü</h3>
+        <p class="text-gray-700">Uzun vadeli etki yaratan proje uygulamaları</p>
+      </li>
+    </ol>
+  </section>
+  <!-- 🧩 Modern Project Grid -->
+  <section id="projeler" class="py-20 px-6 bg-white">
+    <div class="container mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">43 ADIM Kapsamındaki Projeler</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Kütahya'da eğitimi güçlendiren, öğrencilerin potansiyelini ortaya çıkaran 9 farklı proje
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+
+        <!-- Yeşil Adım Projesi -->
+        <a href="proje.html?proje=YesilAdim" class="project-card group lazy-content" style="--project-color: #00A86B">
+          <div class="project-card-header">
+            <div class="project-logo-container">
+              <img data-src="assets/images/logos/yesiladim-logo.svg" alt="Yeşil Adım Logo" class="project-logo lazy"
+                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Crect width='100' height='100' fill='%2300A86B'/%3E%3C/svg%3E"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="project-logo-fallback" style="display: none; background-color: #00A86B;">
+                <span class="text-white font-bold text-2xl">YA</span>
+              </div>
+            </div>
+            <div class="project-theme-indicator" style="background-color: #00A86B;"></div>
+          </div>
+
+          <div class="project-card-content">
+            <h3 class="project-card-title">Yeşil Adım</h3>
+            <p class="project-card-description">
+              Öğrencilerde çevre bilinci geliştirmek, doğayı koruma ve sürdürülebilir yaşam konularında farkındalık
+              oluşturmak
+            </p>
+            <div class="project-card-tags">
+              <span class="project-tag" style="background-color: rgba(0, 168, 107, 0.1); color: #00A86B;">Çevre</span>
+              <span class="project-tag"
+                style="background-color: rgba(0, 168, 107, 0.1); color: #00A86B;">Sürdürülebilirlik</span>
+            </div>
+          </div>
+
+          <div class="project-card-footer">
+            <span class="project-card-cta">Projeyi İncele →</span>
+          </div>
+        </a>
+
+        <!-- Veli Katılım Sistemi -->
+        <a href="proje.html?proje=VeliKatilim" class="project-card group lazy-content" style="--project-color: #02144A">
+          <div class="project-card-header">
+            <div class="project-logo-container">
+              <img data-src="assets/images/logos/velikatilimsistemi-logo.svg" alt="Veli Katılım Logo" class="project-logo lazy"
+                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Crect width='100' height='100' fill='%2302144A'/%3E%3C/svg%3E"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="project-logo-fallback" style="display: none; background-color: #02144A;">
+                <span class="text-white font-bold text-2xl">VK</span>
+              </div>
+            </div>
+            <div class="project-theme-indicator" style="background-color: #02144A;"></div>
+          </div>
+
+          <div class="project-card-content">
+            <h3 class="project-card-title">Veli Katılım Sistemi</h3>
+            <p class="project-card-description">
+              Velilerin eğitim-öğretim sürecine düzenli, ölçülebilir ve teşvik edici yollarla katılımını sağlamak
+            </p>
+            <div class="project-card-tags">
+              <span class="project-tag" style="background-color: rgba(2, 20, 74, 0.1); color: #02144A;">Veli
+                Katılımı</span>
+              <span class="project-tag" style="background-color: rgba(2, 20, 74, 0.1); color: #02144A;">Dijital</span>
+            </div>
+          </div>
+
+          <div class="project-card-footer">
+            <span class="project-card-cta">Projeyi İncele →</span>
+          </div>
+        </a>
+
+        <!-- Birlikte Okuduk -->
+        <a href="proje.html?proje=BirlikteOkuduk" class="project-card group lazy-content" style="--project-color: #EAB33E">
+          <div class="project-card-header">
+            <div class="project-logo-container">
+              <img data-src="assets/images/logos/birlikteokuduk-logo.svg" alt="Birlikte Okuduk Logo" class="project-logo lazy"
+                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Crect width='100' height='100' fill='%23EAB33E'/%3E%3C/svg%3E"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="project-logo-fallback" style="display: none; background-color: #EAB33E;">
+                <span class="text-black font-bold text-2xl">BO</span>
+              </div>
+            </div>
+            <div class="project-theme-indicator" style="background-color: #EAB33E;"></div>
+          </div>
+
+          <div class="project-card-content">
+            <h3 class="project-card-title">Birlikte Okuduk Birlikte Yorumladık</h3>
+            <p class="project-card-description">
+              Öğrenciler ve velilerin birlikte kitap okuyarak aile içi iletişimi güçlendirmesi
+            </p>
+            <div class="project-card-tags">
+              <span class="project-tag" style="background-color: rgba(234, 179, 62, 0.1); color: #EAB33E;">Okuma</span>
+              <span class="project-tag" style="background-color: rgba(234, 179, 62, 0.1); color: #EAB33E;">Aile</span>
+            </div>
+          </div>
+
+          <div class="project-card-footer">
+            <span class="project-card-cta">Projeyi İncele →</span>
+          </div>
+        </a>
+
+        <!-- Güçlü Adımlar -->
+        <a href="proje.html?proje=GucluAdimlar" class="project-card group" style="--project-color: #639AF2">
+          <div class="project-card-header">
+            <div class="project-logo-container">
+              <div class="project-logo-fallback" style="background-color: #639AF2;">
+                <span class="text-white font-bold text-2xl">GA</span>
+              </div>
+            </div>
+            <div class="project-theme-indicator" style="background-color: #639AF2;"></div>
+          </div>
+
+          <div class="project-card-content">
+            <h3 class="project-card-title">Güçlü Adımlar</h3>
+            <p class="project-card-description">
+              8., 11. ve 12. sınıf öğrencilerinin DYK sınavlarına bilinçli ve özgüvenli hazırlanması
+            </p>
+            <div class="project-card-tags">
+              <span class="project-tag" style="background-color: rgba(99, 154, 242, 0.1); color: #639AF2;">Sınav
+                Hazırlık</span>
+              <span class="project-tag"
+                style="background-color: rgba(99, 154, 242, 0.1); color: #639AF2;">Akademik</span>
+            </div>
+          </div>
+
+          <div class="project-card-footer">
+            <span class="project-card-cta">Projeyi İncele →</span>
+          </div>
+        </a>
+
+        <!-- Okulda Nezaket Hareketi -->
+        <a href="proje.html?proje=OkuldaNezaket" class="project-card group" style="--project-color: #4D179B">
+          <div class="project-card-header">
+            <div class="project-logo-container">
+              <div class="project-logo-fallback" style="background-color: #4D179B;">
+                <span class="text-white font-bold text-2xl">NH</span>
+              </div>
+            </div>
+            <div class="project-theme-indicator" style="background-color: #4D179B;"></div>
+          </div>
+
+          <div class="project-card-content">
+            <h3 class="project-card-title">Okulda Nezaket Hareketi</h3>
+            <p class="project-card-description">
+              Akran zorbalığını önleme, farkındalık oluşturma ve olumlu akran ilişkilerini geliştirme
+            </p>
+            <div class="project-card-tags">
+              <span class="project-tag" style="background-color: rgba(77, 23, 155, 0.1); color: #4D179B;">Nezaket</span>
+              <span class="project-tag" style="background-color: rgba(77, 23, 155, 0.1); color: #4D179B;">Sosyal</span>
+            </div>
+          </div>
+
+          <div class="project-card-footer">
+            <span class="project-card-cta">Projeyi İncele →</span>
+          </div>
+        </a>
+
+        <!-- Değerlerin Sahnesi -->
+        <a href="proje.html?proje=DegerlerinSahnesi" class="project-card group" style="--project-color: #870000">
+          <div class="project-card-header">
+            <div class="project-logo-container">
+              <div class="project-logo-fallback" style="background-color: #870000;">
+                <span class="text-white font-bold text-2xl">DS</span>
+              </div>
+            </div>
+            <div class="project-theme-indicator" style="background-color: #870000;"></div>
+          </div>
+
+          <div class="project-card-content">
+            <h3 class="project-card-title">Değerlerin Sahnesi</h3>
+            <p class="project-card-description">
+              Lise öğrencilerinin değerler eğitimini sanat yoluyla içselleştirmesi ve tiyatro etkinlikleri
+            </p>
+            <div class="project-card-tags">
+              <span class="project-tag" style="background-color: rgba(135, 0, 0, 0.1); color: #870000;">Tiyatro</span>
+              <span class="project-tag" style="background-color: rgba(135, 0, 0, 0.1); color: #870000;">Değerler</span>
+            </div>
+          </div>
+
+          <div class="project-card-footer">
+            <span class="project-card-cta">Projeyi İncele →</span>
+          </div>
+        </a>
+
+        <!-- Geleneksel Çocuk Oyunları -->
+        <a href="proje.html?proje=CocukOyunlari" class="project-card group" style="--project-color: #870000">
+          <div class="project-card-header">
+            <div class="project-logo-container">
+              <div class="project-logo-fallback" style="background-color: #870000;">
+                <span class="text-white font-bold text-2xl">GÇ</span>
+              </div>
+            </div>
+            <div class="project-theme-indicator" style="background-color: #870000;"></div>
+          </div>
+
+          <div class="project-card-content">
+            <h3 class="project-card-title">Geleneksel Çocuk Oyunları</h3>
+            <p class="project-card-description">
+              Kültürel mirasımızın bir parçası olan geleneksel çocuk oyunlarını tanıma ve yaşatma
+            </p>
+            <div class="project-card-tags">
+              <span class="project-tag" style="background-color: rgba(135, 0, 0, 0.1); color: #870000;">Kültür</span>
+              <span class="project-tag" style="background-color: rgba(135, 0, 0, 0.1); color: #870000;">Oyun</span>
+            </div>
+          </div>
+
+          <div class="project-card-footer">
+            <span class="project-card-cta">Projeyi İncele →</span>
+          </div>
+        </a>
+
+        <!-- Kütahya Yardımlaşıyor -->
+        <a href="proje.html?proje=KutahyaYardimlasiyor" class="project-card group" style="--project-color: #073E55">
+          <div class="project-card-header">
+            <div class="project-logo-container">
+              <div class="project-logo-fallback" style="background-color: #073E55;">
+                <span class="text-white font-bold text-2xl">KY</span>
+              </div>
+            </div>
+            <div class="project-theme-indicator" style="background-color: #073E55;"></div>
+          </div>
+
+          <div class="project-card-content">
+            <h3 class="project-card-title">Kütahya Yardımlaşıyor</h3>
+            <p class="project-card-description">
+              Sosyal sorumluluk bilincini geliştirmek ve iyilik kültürünü yaygınlaştırmak
+            </p>
+            <div class="project-card-tags">
+              <span class="project-tag"
+                style="background-color: rgba(7, 62, 85, 0.1); color: #073E55;">Yardımlaşma</span>
+              <span class="project-tag" style="background-color: rgba(7, 62, 85, 0.1); color: #073E55;">Sosyal</span>
+            </div>
+          </div>
+
+          <div class="project-card-footer">
+            <span class="project-card-cta">Projeyi İncele →</span>
+          </div>
+        </a>
+
+        <!-- Keşfet Öğren -->
+        <a href="proje.html?proje=KesfetOgren" class="project-card group" style="--project-color: #85AFBF">
+          <div class="project-card-header">
+            <div class="project-logo-container">
+              <div class="project-logo-fallback" style="background-color: #85AFBF;">
+                <span class="text-white font-bold text-2xl">KÖ</span>
+              </div>
+            </div>
+            <div class="project-theme-indicator" style="background-color: #85AFBF;"></div>
+          </div>
+
+          <div class="project-card-content">
+            <h3 class="project-card-title">Keşfet Öğren</h3>
+            <p class="project-card-description">
+              Özel eğitim öğrencilerinin bilimsel meraklarını artırmak ve deneysel öğrenme süreçlerine katılım
+            </p>
+            <div class="project-card-tags">
+              <span class="project-tag" style="background-color: rgba(133, 175, 191, 0.1); color: #85AFBF;">Özel
+                Eğitim</span>
+              <span class="project-tag" style="background-color: rgba(133, 175, 191, 0.1); color: #85AFBF;">Bilim</span>
+            </div>
+          </div>
+
+          <div class="project-card-footer">
+            <span class="project-card-cta">Projeyi İncele →</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+  <!-- 📞 Footer -->
+  <script src="assets/js/footer.js"></script>
+  
+  <!-- Performance Optimizations -->
+  <script src="assets/js/performance.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <!-- Lazy Load Non-Critical CSS -->
+  <script>
+    // Load remaining CSS files asynchronously
+    const loadCSS = (href) => {
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = href;
+      link.media = 'print';
+      link.onload = () => { link.media = 'all'; };
+      document.head.appendChild(link);
+    };
+    
+    // Load after initial render
+    setTimeout(() => {
+      loadCSS('assets/css/proje.css');
+      loadCSS('assets/css/footer.css');
+    }, 100);
+  </script>
+
+</body>
+
+</html>

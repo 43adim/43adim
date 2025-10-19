@@ -1,0 +1,46 @@
+{
+  "name": "43adim-web",
+  "version": "2.0.0",
+  "description": "43 ADIM Projesi - Modern responsive web sitesi",
+  "main": "index.html",
+  "scripts": {
+    "build": "node optimize-assets.js",
+    "dev": "python -m http.server 8000",
+    "serve": "npx serve .",
+    "optimize": "node optimize-assets.js",
+    "validate": "html-validate *.html",
+    "lighthouse": "lighthouse http://localhost:8000 --output=html --output-path=./lighthouse-report.html",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/43adim-web.git"
+  },
+  "keywords": [
+    "education",
+    "kutahya",
+    "mem",
+    "arge",
+    "responsive",
+    "github-pages"
+  ],
+  "author": "Kütahya İl MEM AR-GE Birimi",
+  "license": "MIT",
+  "devDependencies": {
+    "html-minifier-terser": "^7.2.0",
+    "clean-css-cli": "^5.6.2",
+    "terser": "^5.24.0",
+    "html-validate": "^8.7.4",
+    "lighthouse": "^11.4.0",
+    "serve": "^14.2.1"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ],
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

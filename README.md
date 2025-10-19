@@ -243,4 +243,5 @@ Bu proje Kütahya İl Millî Eğitim Müdürlüğü tarafından geliştirilmişt
 
 ---
 
+
 **43 ADIM Projesi** - Kütahya'da eğitimi güçlendiren, öğrencilerin potansiyelini ortaya çıkaran yenilikçi yaklaşım.
